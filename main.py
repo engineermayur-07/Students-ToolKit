@@ -7,6 +7,7 @@
 import sqlite3
 import sys
 import json
+from chatbot import Saathi
 resources_={
          "documentation":{
             "c language":"https://www.cprogramming.com/tutorial/c-tutorial.html",
@@ -39,7 +40,6 @@ resources_={
     }
 
 # --- DATABASE SETUP ---
-# Connect to the database file and create the table if it's missing
 conn = sqlite3.connect('student_toolkit.db')
 cursor = conn.cursor()
 cursor.execute('''
@@ -80,7 +80,6 @@ def resources():
         for topic  in resources_[category]:
             print(f"{topic} : {resources_[category][topic]}")
         print(20*"-")
-
 
 def date_checker(date):
     try:
@@ -312,6 +311,10 @@ def login():
         else:
             return  None,False
 
+def chatbot():
+    print("\n--- Launching Saathi, your AI Study Buddy ---\n")
+    Saathi()
+      
 
 # --- MAIN TERMINAL LOOP ---
 while True:
@@ -337,7 +340,8 @@ while True:
                 print("6. View Completed Tasks")
                 print("7. View Incomplete Tasks")
                 print("8. Resources")
-                print("9. Logout")
+                print("9. Saathi AI")
+                print("10. Logout")
                 sub_choice = input("Enter your choice: ")
                 if sub_choice == '1' or sub_choice.lower() == "view profile":
                     profile(student[0])
@@ -355,7 +359,9 @@ while True:
                     view_incomplete_tasks(student[0])
                 elif sub_choice == '8' or sub_choice.lower() == "resources":
                     resources()
-                elif sub_choice == '9'  or sub_choice.lower() == "logout":
+                elif sub_choice == '9' or sub_choice.lower() == "saathi ai":
+                    chatbot()
+                elif sub_choice == '10' or sub_choice.lower() == "logout":
                     print("Logging out...")
                     break
 
