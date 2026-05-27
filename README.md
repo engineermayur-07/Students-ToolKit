@@ -196,7 +196,7 @@ To contribute:
     <td align="center">
       <b>Mayur B. Gund</b><br>
       FY B.Tech Computer Science Engineering<br><br>
-      <a href="https://github.com/engineermayur-07">github.com/engineermayur-07</a>
+      <a href="https://github.com/engineermayur-07">github.com/engineermayur-07</a><br>
       <a href="https://linkedin.com/in/mgund1920">LinkedIn</a>
     </td>
   </tr>
